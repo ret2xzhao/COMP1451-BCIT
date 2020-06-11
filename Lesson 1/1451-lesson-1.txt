@@ -1,0 +1,58 @@
+test friday at 2:30
+
+homework:
+sign the assessment declaration before Friday
+
+Jason_Harrison@bcit.ca
+
+do not email me from learn.bcit.ca
+
+instead use email from my.bcit.ca
+also your grades are on my.bcit.ca
+
+ask questions about bcit, other schools, business, $
+
+me:
+bcit grad: cst
+option head: web&mobile, technical entrepreneurship
+program head: full-stack web dev diploma
+
+daily routine:
+2:30-3:00 quiz: handwritten on your own
+3:00-5:00 lesson and talks and lab walkthroughs
+5:00-5:30 lab, q&a
+
+official due dates:
+assignment 0: due lesson 6
+assignment 1: due lesson 9
+assignment 2: due lesson 12
+
+lab homework:
+usually 2 parts to a lab: part a, part b
+part a: partners; a different partner each time
+part b: alone
+
+submit them on time
+and then can re-submit after the walkthrough
+
+DUE FRIDAY JUNE 12 BEFORE 2:30PM:
+1. assessment declaration signed
+2. study for quiz 1 (based on the previous lesson)
+3. lab1a with a partner
+4. lab1b alone, on time
+
+assignment 0 is the SKUNK game
+marks are for:
+
+- modular
+- correct functioning
+- good comments
+- good coding style
+
+https://google.github.io/styleguide/javaguide.html
+
+naming conventions for packages:
+- meaningful
+- lowercase
+- unique
+- reverse domain name
