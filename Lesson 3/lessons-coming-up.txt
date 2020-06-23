@@ -1,0 +1,6 @@
+lesson 4: unit testing
+lesson 5 - 8: inheritance
+lesson 9: exceptions
+lesson 10: soft engineering
+lesson 11: july 24: final exam
+lesson 12: july 29: looking ahead to the future
