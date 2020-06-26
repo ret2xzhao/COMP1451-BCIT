@@ -8,6 +8,7 @@ package ca.bcit.comp1451.a00898485;
 
 public class BankAccount
 {
+    // Instance Variables:
     private String firstName;
     private String lastName;
     private String customerAddress;
@@ -18,8 +19,7 @@ public class BankAccount
     /**
      * Constructor for objects of class BankAccount.
      */
-    public BankAccount(String firstName, String lastName, String customerAddress, 
-                       double balance, String accountNumber, boolean accountStatus)
+    public BankAccount(String firstName, String lastName, String customerAddress, double balance, String accountNumber, boolean accountStatus)
     {
         setFirstName(firstName);
         setLastName(lastName);
