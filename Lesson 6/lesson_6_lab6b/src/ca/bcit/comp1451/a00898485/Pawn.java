@@ -81,16 +81,17 @@ public class Pawn extends ChessPiece{
             return false;
         }
         else if(this.hasBeenPromoted && pawn.hasBeenPromoted){
-            if(this.newPiece.getValue() != pawn.newPiece.getValue()){
-                return false;
+            int difference = this.getNewPiece().getValue() - pawn.getNewPiece().getValue();
+            if(Math.abs(difference) <= DIFFERENCE) {
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     /**
      * When a Pawn reaches the far side of the board, it is exchanged for another ChessPiece; for example, a Pawn
-     * can "become" a Rook, or a Queen, etc¡­. It cannot become a King or Pawn though.
+     * can "become" a Rook, or a Queen, etcâ€¦. It cannot become a King or Pawn though.
      * @param newPiece A ChessPiece to set the Pawn to be promoted to.
      */
     public void promote(ChessPiece newPiece) {
