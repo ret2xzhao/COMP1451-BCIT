@@ -104,14 +104,14 @@ public class ChessPiece {
     }
 
     /**
-     * Displays "moving…" for a ChessPiece.
+     * Displays "moving..." for a ChessPiece.
      */
     public void move() {
-        System.out.println("moving…");
+        System.out.println("moving...");
     }
 
     /**
-     * Overrides the toString() method and returns the name of its class (e.g. "White Pawn" or "Black Knight", etc…).
+     * Overrides the toString() method and returns the name of its class (e.g. "White Pawn" or "Black Knight", etc...).
      */
     @Override
     public String toString() {
@@ -121,6 +121,17 @@ public class ChessPiece {
         else {
             return "Black " + this.chessPieces.get(this.getValue());
         }
+    }
+
+    /**
+     * Overrides the hashCode() method.
+     */
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + value;
+        return result;
     }
 
     /**
@@ -145,13 +156,5 @@ public class ChessPiece {
         else {
             return false;
         }
-    }
-
-    /**
-     * Overrides the hashCode() method.
-     */
-    @Override
-    public int hashCode() {
-        return 31 * value;
     }
 }
