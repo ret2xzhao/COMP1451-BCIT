@@ -18,6 +18,7 @@ public class ChessPiece {
     public static final int     ROOK        = 5;
     public static final int     QUEEN       = 9;
     public static final int     KING        = 1000;
+    public static final int     DIFFERENCE  = 1;
 
     // Instance Variables:
     private boolean whiteColor;
@@ -103,14 +104,14 @@ public class ChessPiece {
     }
 
     /**
-     * Displays "moving¡­" for a ChessPiece.
+     * Displays "movingâ€¦" for a ChessPiece.
      */
     public void move() {
-        System.out.println("moving¡­");
+        System.out.println("movingâ€¦");
     }
 
     /**
-     * Overrides the toString() method and returns the name of its class (e.g. "White Pawn" or "Black Knight", etc¡­).
+     * Overrides the toString() method and returns the name of its class (e.g. "White Pawn" or "Black Knight", etcâ€¦).
      */
     @Override
     public String toString() {
@@ -137,11 +138,12 @@ public class ChessPiece {
             return false;
         }
         ChessPiece other = (ChessPiece) obj;
-        if (this.value != other.value) {
-            return false;
+        int difference = this.getValue() - other.getValue();
+        if(Math.abs(difference) <= DIFFERENCE) {
+            return true;
         }
         else {
-            return true;
+            return false;
         }
     }
 
