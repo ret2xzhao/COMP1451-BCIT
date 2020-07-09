@@ -103,14 +103,14 @@ public class ChessPiece {
     }
 
     /**
-     * Displays "moving¡­" for a ChessPiece.
+     * Displays "moving..." for a ChessPiece.
      */
     public void move() {
-        System.out.println("moving¡­");
+        System.out.println("moving...");
     }
 
     /**
-     * Overrides the toString() method and returns the name of its class (e.g. "White Pawn" or "Black Knight", etc¡­).
+     * Overrides the toString() method and returns the name of its class (e.g. "White Pawn" or "Black Knight", etc...).
      */
     @Override
     public String toString() {
