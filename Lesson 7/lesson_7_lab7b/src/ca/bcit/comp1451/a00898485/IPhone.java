@@ -3,7 +3,7 @@ package ca.bcit.comp1451.a00898485;
 /**
  * class IPhone
  *
- * @author Xin Zhao (A00898485) with Manpreet Kaur
+ * @author Xin Zhao (A00898485)
  * @version 1.0
  */
 
@@ -88,7 +88,7 @@ public abstract class IPhone extends IDevice{
     }
 
     /**
-     * Overrides the equals() method. IPhones which have +/- 10 minutes of each other¡¯s number of minutes remaining
+     * Overrides the equals() method. IPhones which have +/- 10 minutes of each otherÂ¡Â¯s number of minutes remaining
      * on their phone plan are considered equal.
      */
     @Override
