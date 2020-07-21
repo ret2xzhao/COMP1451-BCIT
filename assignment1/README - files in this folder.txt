@@ -1,0 +1,7 @@
+Assignment 1.docx and Assignment 1.pdf have the same contents; two versions are offered for ease-of-use.  Did you know you have free access to Microsoft Word through BCIT's Dreamspark arrangement? :-D
+
+You'll also note that this folder includes a package.bluej.  If you open this package up, it will appear to be empty, because it has information about classes that you haven't made yet.  Try this instead: Create all the classes that the project needs, then copy this pakage.bluej file over the one in your project folder.  You next open the project, you will find that the class diagram re-organizes itself in a tidy manner.  Please note: This is not a mandatory step - nor is it even recommended.  Some students were requesting the layout that I had, and this file makes it available. [~James]
+
+TestAssignment1.java IS a mandatory file.  Be sure to copy it into your project folder.  If your solution doesn't play nice with TestAssignment1.java, you should adjust what you wrote, to fit.
+
+Finally, enjoy these pre-made Date.java and Weekday.java files.  Many of your classmates already created these files to solve Assignment 2 in COMP 1409.  You'll have enough work to do even if it doesn't include these! :-D

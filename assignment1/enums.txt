@@ -1,0 +1,12 @@
+public static final int SOUTH = 0;
+public static final int NORTH = 1;
+public static final int WEST  = 2;
+public static final int EAST  = 3;
+
+direction = 5;
+
+public enum Direction{
+	SOUTH, NORTH, WEST, EAST
+}
+
+direction = Direction.WEST;
