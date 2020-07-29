@@ -1,0 +1,195 @@
+Lesson 1: Visibility modifiers
+
+1.  private: accessible only to that class; instance variables must be private
+    default (aka package-private): accessible only to that class and its package
+    protected: accessible only to that class and its package, plus all child classes anywhere
+    public: accessible anywhere (often fine for symbolic constants, eg. public static final double PI = 3.14;
+
+    package ca.bcit.comp1451.jasonharrison.assignment1;
+
+    // entry point to begin running your program
+    public static void main(String[] args)
+    {
+        for(String arg: args)
+        {
+            sysout(arg);
+        }
+    }
+Run/Run Configurations/Parameters
+-----------------------------
+Lesson 2: Visibility modifiers
+
+import java.util.Scanner;
+
+private Scanner sc = new Scanner(System.in);
+
+while(sc.hasNext())
+{
+    if(sc.hasNextInt())
+    {
+        int userInt = sc.nextInt();
+    }
+}
+sc.close();
+
+Coupling: how interconnected things are; we want one class to know ONLY the interface of another class
+Cohesion: things should have ONE focus
+We want loose coupling and high cohesion
+
+import java.util.Random;
+Random r = new Random();
+
+// get int from 44 to 68 inclusive:
+int myInt = r.next(25) + 44;
+-----------------------------
+Lesson 3: Maps
+
+private HashMap<Integer, HockeyTeam> stanleyCupWinners;
+
+stanleyCupWinners = new HashMap<>();
+stanleyCupWinners.put(1994, new HockeyTeam("New York Rangers"));
+
+Collections: sets, lists, maps
+
+Set<Integer> years = stanleyCupWinners.keySet();
+Iterator<Integer> it = stanleyCupWinners.iterator();
+
+while(it.hasNext())
+{
+    int year = it.next();
+    System.out.println(stanleyCupWinners.get(year).getTeamName()); // "New York Rangers" etc
+}
+-----------------------------
+Lesson 4: Unit Testing
+
+Unit tests can test the structure of your whole class, including methods, constructors, and even data.
+Test-driven development: write a test, then write just enough code to pass that test, and repeat.
+-----------------------------
+Lesson 5: Inheritance
+
+class Animal{}
+class Frog extends Animal{}
+class DartFrog extends Frog{}
+
+In Java, each class has exactly one parent.
+Object class is the top of the hierarchy and is a parent of every class.
+
+Inheritance: code (and test) re-use
+Default constructor: if and only if there is no constructor, Java will create one for you:
+
+public Dog()    // no arguments
+{
+    super();    // calls super, with no arguments
+}
+
+super() calls the parent constructor; if you don't write it as the first line of your constructor, Java will (invisibly) do it for you
+
+In order to compile, we must have a matching super() call from the child to the parent.
+Before you create yourself, you create your parent.
+
+Substitution: any child can always be substituted for its parent
+Vehicle v = new Car();
+
+instanceof operator: if(polarBear instanceof Bear)    // true
+getClass(): if(polarBear.getClass().getName().equals("Bear")) // false
+casting
+if(animal instanceof Frog)
+{
+    Frog f = (Frog)animal;
+    f.ribbit(); // now can use Frog-specific methods
+}
+-----------------------------
+Lesson 6: Polymorphism
+
+Method overriding: same method signature in child as in parent.
+
+@Override annotation: if we make a mistake and we are not ACTUALLY overriding, then Java will not compile and it will warn us
+
+**Polymorphism: when overridden methods are being used, the "closest-matching" method will be called at runtime.
+
+Animal a = new Dog();
+a.speak();    // will look in the Dog class and call THAT speak method
+
+toString() method; equals() method; hashCode() method
+equal objects must return equal hashcodes
+-----------------------------
+Lesson 7: Abstract
+
+Abstract methods: methods with no body; the child will implement it
+If a class has an abstract method, it must be an abstract class.
+
+Abstract classes: an abstract class cannot have objects instantiated of it
+These exist to put all the common data and methods into it, to ensure children have them.
+-----------------------------
+Lesson 8: Interfaces
+
+Interface: a group of public abstract methods and/or public static final data members and (recently) default (concrete) methods.
+
+Comparable interface: Java uses it so we should implement it when it's useful
+
+class Bat extends Mammal implements Flyable, Speakable, Comparable<Bat>
+{
+    @Override
+    public int compareTo(Bat b)
+    {
+        return this.weightGrams - b.weightGrams; // heavier Bats are "bigger"
+    }
+}
+-----------------------------
+Lesson 9: Exceptions
+
+class MyException extends RuntimeException
+{
+    MyException(String m)
+    {
+        super(m);
+    }
+}
+
+class A
+{
+    /**
+     * @param x whatever x is
+     * @throws MyException if x < 0
+     */
+    A(int x) throws MyException
+    {
+        super();
+        if(x < 0)
+        {
+            throw new MyException("too low");
+        }
+    }
+}
+
+class Main
+{
+    psvm()
+    {
+        try
+        {
+            A a = new A(4);
+        }
+        catch(MyException e)
+        {
+            e.printStackTrace();
+        }
+        catch(Exception e)
+        {
+            sop(e.getMessage());
+        }
+        finally
+        {
+            // always executes
+        }
+    }
+}
+
+Checked: forces tryer to use try/catch (or to rethrow) and the thrower to declare in the method signature
+unchecked: try/catch (or rethrow) and declaring are optional
+
+Checked: use these only for exceptions that are likely to occur and are fixable
+
+Final methods: cannot be overridden
+Final classes: cannot be extended
+Final data: cannot be changed (use this for all parameters, and most of your own instance variables)
